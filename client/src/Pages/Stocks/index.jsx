@@ -50,9 +50,10 @@
     const count = data.getStocks.total
     return (<Container>
         <div className={style.wapper}>
-            {result.map((i)=>{
+            {result.map((i,index)=>{
                 return <StockCard bg='#fff'>
                     <div 
+                    key={index}
                     className={style.cardContent} 
                     onClick={()=>{
                         history.replace(`/detail/${i.Symbol}`)

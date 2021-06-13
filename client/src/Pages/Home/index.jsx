@@ -39,10 +39,11 @@ function GetSectorStocks({Sector}){
 
     if(!data)  return <p>rendering...</p>
     const arr =data.getStocksBySector
-    return arr.slice(0,5).map((i)=>{
+    return arr.slice(0,5).map((i,index)=>{
         return (
             <StockCard bg='#fff'>
                 <div 
+                key={index}
                 className={style.cardContent} 
                 onClick={()=>{
                     history.replace(`/detail/${i.Symbol}`)

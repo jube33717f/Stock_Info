@@ -145,7 +145,7 @@ const Detail = ()=>{
                 <section className={style.detailHeader}>
                     <GetOneStock/>
                 </section>
-                <section><HistoryTable /></section>
+                <section className={style.history}><HistoryTable /></section>
             </div>
             
         </Container></>

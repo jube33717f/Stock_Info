@@ -67,10 +67,9 @@ const Bookings = ()=>{
         
         <div className={style.header}> <p>Subscribes:</p></div>
            
-        {result.length>0&&result.map((i)=>{
-            console.log(i)
+        {result.length>0&&result.map((i,index)=>{
             return(<StockCard bg='#fff'>
-            <div className={style.cardContent} >
+            <div key={index}  className={style.cardContent} >
                     <h2 onClick={()=>{
                         history.replace(`/detail/${i.Symbol}`)
                     }}>{i.Name}</h2>

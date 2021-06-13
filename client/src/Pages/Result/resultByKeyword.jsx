@@ -37,9 +37,10 @@
     const result =data.searchStockByName
     return (<Container>
         <div className={style.wapper}>
-            {loading?'Loading...':((error||result.length<1)?<p>No results</p>:<>{result.map((i)=>{
+            {loading?'Loading...':((error||result.length<1)?<p>No results</p>:<>{result.map((i,index)=>{
                 return <StockCard bg='#fff'>
                     <div 
+                    key={index}
                     className={style.cardContent} 
                     onClick={()=>{
                         history.replace(`/detail/${i.Symbol}`)

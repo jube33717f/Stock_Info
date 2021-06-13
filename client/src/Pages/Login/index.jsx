@@ -20,16 +20,7 @@ import StockCard from '../../Components/StockCard'
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors';
-const ColorButton = withStyles((theme) => ({
-    root: {
-      color: theme.palette.getContrastText(purple[500]),
-      backgroundColor: purple[500],
-      marginTop:'3rem',
-      '&:hover': {
-        backgroundColor: purple[700],
-      },
-    },
-  }))(Button);
+/* <------------------------------------ **** GRAPH QUERY START **** ------------------------------------ */
 const LOGIN_USER = gql`
     mutation LOGIN(
         $email: String!
@@ -43,14 +34,31 @@ const LOGIN_USER = gql`
         }
     }
 `;
+/* <------------------------------------ **** GRAPH QUERY END **** ------------------------------------ */
+/* <------------------------------------ **** STYLE COMPONENT START **** ------------------------------------ */
+const ColorButton = withStyles((theme) => ({
+    root: {
+      color: theme.palette.getContrastText(purple[500]),
+      backgroundColor: purple[500],
+      marginTop:'3rem',
+      '&:hover': {
+        backgroundColor: purple[700],
+      },
+    },
+  }))(Button);
+/* <------------------------------------ **** STYLE COMPONENT START **** ------------------------------------ */
+
 const Login = ()=>{
-  
+    /* <------------------------------------ **** HOOKS START **** ------------------------------------ */
     const [values, setValues] = useState({
         email: '',
         password: '',
         showPassword: false,
     });
     const history=useHistory()
+    const [addTodo, { data }] = useMutation(LOGIN_USER);
+    /* <------------------------------------ **** HOOKS END **** ------------------------------------ */
+    /* <------------------------------------ **** FUNCTION START **** ------------------------------------ */
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
     }; 
@@ -60,7 +68,7 @@ const Login = ()=>{
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-    const [addTodo, { data }] = useMutation(LOGIN_USER);
+    /* <------------------------------------ **** FUNCTION END **** ------------------------------------ */
     return (<Container>
         <div className={style.login}>
             

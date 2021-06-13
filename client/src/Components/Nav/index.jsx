@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import style from './style.module.scss'
 import MultilineChartIcon from '@material-ui/icons/MultilineChart';
 import { Link } from 'react-router-dom';
- /* <------------------------------------ **** Style component **** ------------------------------------ */
+/* <------------------------------------ **** STYLE COMPONENT START **** ------------------------------------ */
 const useStyles = makeStyles((theme) => ({
     popover: {
       pointerEvents: 'none',
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
       
     },
   }));
-
+/* <------------------------------------ **** STYLE COMPONENT END **** ------------------------------------ */
 const Nav = ()=>{
      /* <------------------------------------ **** HOOKS START **** ------------------------------------ */
     const classes = useStyles();
@@ -89,7 +89,7 @@ const Nav = ()=>{
         </Popover>
         </>}
         </div>
-        <button>
+        <button  className={style.lineButton}>
             <div 
             className={style.lineContainer}
             onClick={()=>{setShowPhoneView(true)}}

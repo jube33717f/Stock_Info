@@ -105,7 +105,7 @@ const LineChart = (state)=>{
     },[])
      /* <------------------------------------ **** HOOKS END **** ------------------------------------ */
     return <div style={{height:'40em;'}}>
-        <canvas id="myChart" width="400" height="150"></canvas>
+        <canvas id="myChart" width="400" height="250"></canvas>
       </div>
 }
 

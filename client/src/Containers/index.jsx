@@ -10,12 +10,13 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Nav from '../Components/Nav'
 import style from './style.module.scss'
+
 const Containers =  (props)=>{
 
     return (<>
         <CssBaseline />
         <Nav/>
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" className={style.box}>
         <Typography component="div" className={style.container} >
             {props.children}
         </Typography>

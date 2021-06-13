@@ -88,7 +88,7 @@
 
 
 .phoneNav{
-    z-index: 2000;
+    z-index:2000!important;
     background-color: #24203F;
     padding: 26px;
     padding-top: 18px;
@@ -96,7 +96,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    overflow: hidden;
+    overflow: hidden!important;
     z-index: 11;
     height: 100vh;
     display: flex;
@@ -117,6 +117,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: transparent;
+            border:none;
             span{
                 background: white;
                 display: block;
@@ -160,7 +162,7 @@
         grid-auto-flow: row;
         grid-gap: 2vh;
         align-content: flex-end;
-       
+        
         div{
             color: black;
             background-color: #E8F524;
@@ -176,33 +178,7 @@
         align-items: center;
         justify-content: space-between;
         height: 70px;
-        button{
-            height: 38px;
-            width: 36px;
-            margin-right: -10px;
-            margin-top: -10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            margin-right:2%;
-            display:block;
-            .lineContainer{
-                margin-top:.5rem;
-                height: 20px;
-                width: 18px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                padding: 0;
-                span{
-                    height: 1px;
-                    width: 100%;
-                    background-color: white;
-                    display: block;
-                }
-            }
-        }
+       
     }
     .logo{
         flex: 1;
@@ -214,6 +190,39 @@
     }
     .auth{
         display:none;
+    }
+    .lineButton{
+        display:block!important;
+        height: 38px;
+        width: 36px;
+        margin-right: -10px;
+        margin-top: -10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-right:2%;
+        display:block;
+        color:white;
+        background: transparent;
+        border:none;
+        .lineContainer{
+            margin-top:.5rem;
+            height: 20px;
+            width: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 0;
+
+            span{
+                
+                display:block!important;
+                height: 1px;
+                width: 100%;
+                background-color: white;
+            }
+        }
     }
     
 }

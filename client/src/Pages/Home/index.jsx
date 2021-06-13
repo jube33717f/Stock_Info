@@ -203,7 +203,7 @@ const HomePage = ()=>{
                 </div>
 
         </section>
-        <section className={style.section2s} onMouseOver={()=>{document.documentElement.style.setProperty('--body-bg-color', '#24203F')}}>
+        <section className={style.section2} onMouseOver={()=>{document.documentElement.style.setProperty('--body-bg-color', '#24203F')}}>
                 <div className={style.header}><p>Consumer Staples</p></div>
                 <div className={style.cardContainer}>
                 {GetSectorStocks({Sector:'Consumer Staples'}) } 

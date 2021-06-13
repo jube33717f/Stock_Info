@@ -5,7 +5,7 @@
     margin-bottom: 54px;
     // max-height:40%;
     min-height:40%;
-    
+    max-width:94vw;
     &Box{
         box-sizing: border-box;
         overflow: hidden;
@@ -22,6 +22,20 @@
         background-repeat:no-repeat;
         &Inside{
             padding: 32px;
+            text-overflow: ellipsis;
+        }
+    }
+}
+@media screen and (max-width: 780px){
+    .card{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        min-height: 100px;
+        margin-bottom: 24px;
+        &BoxInside{
+            padding: 24px;
+            text-overflow: ellipsis;
         }
     }
 }

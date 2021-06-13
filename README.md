@@ -27,6 +27,8 @@ and
 cd client && npm i && npm start
 ```
 
+example dataset in '/server/Data'
+use email/password in user.json to login the service
 
 # Tech/framework used
 Client Side:

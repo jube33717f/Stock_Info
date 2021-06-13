@@ -1,0 +1,114 @@
+@mixin sectionStyle{
+    height:100vh;
+    background-color: var(--body-bg-color, #24203F);
+    transition: background-color .5s ease-in;
+    padding-top:90px;
+    white-space: pre;
+    
+}
+@mixin btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #DFE0E1;
+    border-radius: 24px;
+    padding: 12px 32px;
+    font-weight: bold;
+    font-size: var(--font-size-10);
+    position: relative;
+    line-height: 1;
+    height: 46px;
+    cursor:pointer;
+}
+.section1{
+    @include sectionStyle;
+    height:35vh;
+    .cardContainer{
+        height:35vh;
+        margin-top:5vh;
+        
+    }
+    margin-bottom:3vh;
+    
+}
+.section2{
+    @include sectionStyle;
+}
+
+
+
+
+
+
+.cardContainer{
+    display: flex;
+    min-height: 250px;
+    margin-bottom: 24px;
+    height: 70vh;
+    flex-wrap: wrap;
+    
+}
+.header{
+
+    p{
+        line-height: 64px;
+        font-size: 48px;
+        color:#ffffff;
+        text-align: center;
+    }
+}
+.findMore{
+    
+    
+    flex: 1 1 0%;
+    min-width: 30%;
+    margin-right: 24px;
+    margin-bottom: 54px;
+    display: inline-block;
+    .imgWrapper{
+        height:70%;
+        width:80%;
+        margin-left:10%;
+        margin-top:10%;
+        background-image:url(./../../Asserts/bg.png);
+        background-size:100% 100%;
+        background-repeat:no-repeat;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        p{
+            margin:auto;
+            text-align:center;
+            line-height:40px;
+            font-weight:600;
+            margin-top:20%;
+            font-size:1.5rem;
+        }
+    }
+    
+}
+.cardContent{
+    &Table{
+        box-sizing: border-box;
+        display: flex;
+        &Cell{
+            margin-right: 24px;
+            p{
+                margin: 0px;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 18px;
+                color: rgb(190, 190, 203);
+                padding-bottom: 0px;
+            }
+            span{
+                margin: 0px;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: 600;
+                color: rgb(0, 0,0);
+            }
+        }
+    }
+
+}

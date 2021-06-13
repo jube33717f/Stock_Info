@@ -4,7 +4,7 @@
   <img src="https://img.onl/9T2MYo" alt="stock info logo" title="Stock Info logo" width="70">
   <br>
 </h1>
-<p align="center" style="font-size: 1.2rem;">Check and Subscribe Stocks Info </p>
+<p align="center" style="font-size: 1.2rem;">Search and Subscribe Stocks Info </p>
 
 > Author: Jubi
 > 

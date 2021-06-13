@@ -5,16 +5,14 @@ import RootRouter from './Route'
 import './style.scss'
 import {
   ApolloClient,
-  NormalizedCacheObject,
   ApolloProvider,
-  gql,
-  useQuery
 } from '@apollo/client';
 
 import { cache } from './cache';
 const client = new ApolloClient({
   cache,
-  uri: 'http://localhost:4000/graphql',
+  uri: 'http://localhost:4000/',
+  // https://stock-info-apollo.herokuapp.com/
   headers: {
     'client-name': 'Stock Info',
     'client-version': '1.0.0',

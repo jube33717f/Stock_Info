@@ -1,7 +1,7 @@
 <h1 align="center">
   Stock Info
   <br>
-  <img src="https://img.onl/9T2MYo.jpg" alt="stock info logo" title="Stock Info logo" width="70">
+  <img src="https://img.onl/9T2MYo" alt="stock info logo" title="Stock Info logo" width="70">
   <br>
 </h1>
 <p align="center" style="font-size: 1.2rem;">Check and Subscribe Stocks Info </p>

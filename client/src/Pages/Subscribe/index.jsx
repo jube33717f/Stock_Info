@@ -51,7 +51,7 @@ const ColorButton = withStyles((theme) => ({
 const Bookings = ()=>{
     /* <------------------------------------ **** STYLE COMPONENT START **** ------------------------------------ */
     const history = useHistory()
- 
+    const [removed ,setRemoved]= useState([])
     const [ addTodo, { loading: loading_cancel, error: error_cancel,data: data_cancel}] = useMutation(CANCEL_SUBSCRIBE);
     const { loading, error, data } = useQuery(GET_SUBSCRIBES , {
         variables: { id:parseInt(sessionStorage.getItem('userid')) },
@@ -82,10 +82,10 @@ const Bookings = ()=>{
                     color="primary"
                     onClick={()=>{
                         addTodo({ variables: { id: parseInt(sessionStorage.getItem("userid")), Symbol:`${i.Symbol}`} })
-                 
+                        setRemoved([...removed,`${i.Symbol}`])
                     }}
                     >
-                        {data_cancel&&data_cancel.cancelSubscribe.message===`${i.Symbol}`?'Removed':'Unsubscribe'}
+                        {removed.includes(`${i.Symbol}`)?'Removed':'Unsubscribe'}
                     </ColorButton>
                     <div className={style.cardContentTable}>  
                         <div className={style.cardContentTableCell}>

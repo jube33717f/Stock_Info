@@ -72,7 +72,11 @@ function GetOneStock(){
         variables: {id: parseInt(sessionStorage.getItem("userid")),Symbol:symbol },
     });
     /* <------------------------------------ **** HOOKS END **** ------------------------------------ */
-    
+    const subscribeStock = ()=>{
+        addTodo({ variables: { 
+            id: parseInt(sessionStorage.getItem("userid")), 
+            Symbol:`${data.getOneStock.Symbol}`} })
+    }
     let booked = false
    
     if(loading || loading_booked ){
@@ -83,7 +87,7 @@ function GetOneStock(){
         booked = data_booked.isStockBookedByUser    
     }
 
-    if(!data ) return <p> rendering...</p>
+    if(!data ||!data_booked ) return <p> rendering...</p>
     return (
         <>
         {mutationLoading && <p>Loading...</p>}
@@ -97,14 +101,9 @@ function GetOneStock(){
                         <ColorButton variant="contained" color="primary" >
                             Subscribe
                         </ColorButton>
-                    </Link>:(booked?<ColorButton variant="contained" color="primary" disable={true}>
+                    </Link>:(data_booked.isStockBookedByUser ?<ColorButton variant="contained" color="primary" disable={true}>
                             Subscribed
-                        </ColorButton>:<ColorButton variant="contained" color="primary" onClick={()=>{
-                            addTodo({ variables: { 
-                                id: parseInt(sessionStorage.getItem("userid")), 
-                                Symbol:`${data.getOneStock.Symbol}`} })
-                            
-                        }} >
+                        </ColorButton>:<ColorButton variant="contained" color="primary" onClick={subscribeStock} >
                             {data_subscribe&&data_subscribe.booking.message===`${data.getOneStock.Symbol}`?'Subscribed':'Subscribe'}
                         </ColorButton>)}
                         

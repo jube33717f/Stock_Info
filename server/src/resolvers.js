@@ -4,7 +4,6 @@
  * author: Jubi
  * lastModify: Jubi 2021-06-13
  */
-const { resolveFieldValueOrError } = require('graphql/execution/execute');
 const { paginateResults } = require('./utils');
 
 module.exports = {
@@ -36,27 +35,11 @@ module.exports = {
         searchStockByName: async (_,{ keyword },{ dataSources }) =>
             dataSources.StockAPI.searchStockByName( keyword ),
 
-        getSubscribes: async (_, { id  }, { dataSources }) => {
-
-            const allStocks = await dataSources.UserAPI.getBookedStocks({ id });
-
-            return allStocks
-            
-        },
-
-        isStockBookedByUser: async (_, { id  , Symbol }, { dataSources }) => {
-
-            const result = await dataSources.UserAPI.isBooked({ id , Symbol });
-            // we want these in reverse chronological order
-            // allStocks.reverse();
-      
-            
-
-            return result
-            
-        },
-
-
+        getSubscribes: async (_, { id  }, { dataSources }) => 
+            dataSources.UserAPI.getBookedStocks({ id }),
+   
+        isStockBookedByUser: async (_, { id  , Symbol }, { dataSources }) => 
+            dataSources.UserAPI.isBooked({ id , Symbol })
     },
 
     Mutation: {

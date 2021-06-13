@@ -29,8 +29,8 @@ class UserAPI extends DataSource {
   /** booking a stock */
   async bookStock({ id , Symbol }) {
 
-    const res = await this.store.subscribe.findOrCreate({ where: { id , Symbol } });
-    console.log(res)
+    const res = await this.store.subscribe.create({ id :id, Symbol:Symbol });
+
     return res?true:false;
   }
 

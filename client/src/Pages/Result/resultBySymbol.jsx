@@ -33,7 +33,7 @@ const ResultBySymbol =  ()=>{
     });
     /* <------------------------------------ **** HOOKS END **** ------------------------------------ */
     if (loading) return <p>Loading</p>;
-    if (error) return `Error! ${error}`;
+    if (error) return <p>No Matched result</p>;
     const result =data.getOneStock 
     return (<Container>
         <div className={style.wapper}>

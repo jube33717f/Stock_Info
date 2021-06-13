@@ -1,7 +1,7 @@
 <h1 align="center">
   Stock Info
   <br>
-  <img src="./src/asserts/sunny-light.svg" alt="stock info logo" title="Stock Info logo" width="70">
+  <img src="https://img.onl/9T2MYo.jpg" alt="stock info logo" title="Stock Info logo" width="70">
   <br>
 </h1>
 <p align="center" style="font-size: 1.2rem;">Check and Subscribe Stocks Info </p>
@@ -56,9 +56,9 @@ The app is split out into two folders:
 - `client`: Starting point for the frontend
 - `server`: Starting point for the database
   
-  client
-  ```
-  src/
+client
+src/
+```
 ┣ Apis/
 ┃ ┗ index.js
 ┣ Asserts/
@@ -116,8 +116,8 @@ The app is split out into two folders:
 
 
 server
-```
 src/
+```
 ┣ datasources/
 ┃ ┣ stock.js
 ┃ ┗ user.js
@@ -127,3 +127,12 @@ src/
 ┣ schema.js
 ┗ utils.js
 ```
+
+# View
+![Home](https://imgur.com/JsvifII.jpg)
+![Home](https://imgur.com/z5qaYMw.jpg)
+![Login](https://imgur.com/KVLuLss.jpg)
+![Detail](https://imgur.com/l6kJp8M.jpg)
+![Detail](https://imgur.com/aPBbfcA.jpg)
+![Subscribe](https://imgur.com/vcFnshi.jpg)
+![More](https://imgur.com/9wQej0T.jpg)

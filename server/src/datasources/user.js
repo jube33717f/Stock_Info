@@ -30,6 +30,7 @@ class UserAPI extends DataSource {
   async bookStock({ id , Symbol }) {
 
     const res = await this.store.subscribe.findOrCreate({ where: { id , Symbol } });
+    console.log(res)
     return res?true:false;
   }
 
@@ -45,11 +46,10 @@ class UserAPI extends DataSource {
     let response = await this.store.subscribe.findAll({
         where: { id },
       });
-
-    // const stocks = response
+    response = response.map(i=>i.dataValues)
     const stocks = response.map(async i=>{
-       let  stock = await this.store.financials.findAll({ where: { Symbol: i.dataValues.Symbol }});
-       return stock[0].dataValues
+       let  stock = await this.store.financials.findAll({ where: { Symbol: i.Symbol }});
+       return stock[0]
     })
 
     return Array.isArray(stocks)?stocks:[];
@@ -58,6 +58,7 @@ class UserAPI extends DataSource {
 
   /** check if a stock is been  booking by the login user */
   async isBooked({ id ,Symbol }) {
+
     const found = await this.store.subscribe.findAll({
       where: { id, Symbol },
     });

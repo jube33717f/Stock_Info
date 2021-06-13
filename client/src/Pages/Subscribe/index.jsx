@@ -58,50 +58,52 @@ const Bookings = ()=>{
       });
     /* <------------------------------------ **** STYLE COMPONENT END **** ------------------------------------ */
     if (loading) return <p>Loading...</p>
-    if (error) return <p>`Error! ${error}`</p>;
-    
+    if (error) return `Error! ${error}`;
+    console.log(data.getSubscribes)
+    if(!data) return  <p>Loading...</p>
+    const result =data.getSubscribes
     return  (<>
         
         
         <div className={style.header}> <p>Subscribes:</p></div>
            
-        {data.getSubscribes.map((i,index)=>(
-                    <StockCard bg='#fff'>
-                    <div className={style.cardContent} >
-                            <h2 onClick={()=>{
-                                history.replace(`/detail/${i.Symbol}`)
-                            }}>{i.Name}</h2>
-                            <h3 onClick={()=>{
-                                history.replace(`/detail/${i.Symbol}`)
-                            }}>Symbol - {i.Symbol}</h3>
-                            <ColorButton 
-                            variant="contained" 
-                            color="primary"
-                            key={index}
-                            onClick={()=>{
-                                addTodo({ variables: { id: parseInt(sessionStorage.getItem("userid")), Symbol:`${i.Symbol}`} })
-                         
-                            }}
-                            >
-                                {data_cancel&&data_cancel.cancelSubscribe.message===`${i.Symbol}`?'Removed':'Unsubscribe'}
-                            </ColorButton>
-                            <div className={style.cardContentTable}>  
-                                <div className={style.cardContentTableCell}>
-                                    <p>Price</p>
-                                    <span>{i.Price}</span>
-                                </div>
-                                <div className={style.cardContentTableCell}>
-                                    <p>52 Weeks High</p>
-                                    <span>{i.WeekHigh52}</span>
-                                </div>
-                                <div  className={style.cardContentTableCell}>
-                                    <p>52 Weeks Low</p>
-                                    <span>{i.WeekLow52}</span>
-                                </div>
-                            </div>                            
-                    </div>
-                </StockCard>
-                ))
+        {result.length>0&&result.map((i)=>{
+            console.log(i)
+            return(<StockCard bg='#fff'>
+            <div className={style.cardContent} >
+                    <h2 onClick={()=>{
+                        history.replace(`/detail/${i.Symbol}`)
+                    }}>{i.Name}</h2>
+                    <h3 onClick={()=>{
+                        history.replace(`/detail/${i.Symbol}`)
+                    }}>Symbol - {i.Symbol}</h3>
+                    <ColorButton 
+                    variant="contained" 
+                    color="primary"
+                    onClick={()=>{
+                        addTodo({ variables: { id: parseInt(sessionStorage.getItem("userid")), Symbol:`${i.Symbol}`} })
+                 
+                    }}
+                    >
+                        {data_cancel&&data_cancel.cancelSubscribe.message===`${i.Symbol}`?'Removed':'Unsubscribe'}
+                    </ColorButton>
+                    <div className={style.cardContentTable}>  
+                        <div className={style.cardContentTableCell}>
+                            <p>Price</p>
+                            <span>{i.Price}</span>
+                        </div>
+                        <div className={style.cardContentTableCell}>
+                            <p>52 Weeks High</p>
+                            <span>{i.WeekHigh52}</span>
+                        </div>
+                        <div  className={style.cardContentTableCell}>
+                            <p>52 Weeks Low</p>
+                            <span>{i.WeekLow52}</span>
+                        </div>
+                    </div>                            
+            </div>
+        </StockCard>)
+            })
             }
         
                     

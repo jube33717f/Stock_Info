@@ -36,6 +36,7 @@ cd client && npm i && npm start
 Client Side:
 * React JS
 * SASS
+* Material-UI
 
 Server Side:
 * Apollo graphql

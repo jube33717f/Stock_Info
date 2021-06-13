@@ -27,8 +27,9 @@ and
 cd client && npm i && npm start
 ```
 
-example dataset in '/server/Data'
-use email/password in user.json to login the service
+* example dataset in dir '/server/Data'
+* use email/password in user.json to log into and try the service
+  
 
 # Tech/framework used
 Client Side:
@@ -50,7 +51,7 @@ Server Side:
   * remove subscribed stock
 - Stock half year history price(third party api)
   * table and line chart
-  
+- Responsive  Design
 
 
 # File structure

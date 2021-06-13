@@ -67,8 +67,8 @@ const HistoryTable = ()=>{
                         <p>Low</p>
                         <p>Volume</p>
                     </div>
-                    {data.map((i)=>{
-                        return<div className={style.tableBoxContentRow}>
+                    {data.map((i,index)=>{
+                        return<div key={index} className={style.tableBoxContentRow}>
                         <p>{i.Date}</p>
                         <p>{i.Open}</p>
                         <p>{i.Close}</p>

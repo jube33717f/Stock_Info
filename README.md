@@ -29,7 +29,7 @@ cd client && npm i && npm start
 ```
 
 * example dataset in dir '/server/Data'
-* use email/password in user.json to log into and try the service
+* use email/password in '/server/Data/user.json' to log into and try the service
   
 
 # Tech/framework used

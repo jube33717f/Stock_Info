@@ -22,7 +22,7 @@ To run the app, run these commands in two separate terminal windows from the roo
 cd server && npm i && npm start
 ```
 
-and
+and(
 
 ```bash
 cd client && npm i && npm start
@@ -32,6 +32,7 @@ or
 ```bash
 cd client_ts && npm i && npm start
 ```
+)
 
 * example dataset in dir '/server/Data'
 * use email/password in '/server/Data/user.json' to log into and try the service
@@ -64,63 +65,74 @@ Server Side:
 
 # File structure
 The app is split out into two folders:
-- `client`: Starting point for the frontend(js version)
-- `client_ts`: Starting point for the frontend(ts version)
+
+- `client_ts`: Starting point for the frontend<ts version>     (- `client`: Starting point for the frontend<js version>)
 - `server`: Starting point for the database
   
-client
+client_ts
 src/
 ```
 ┣ Apis/
-┃ ┗ index.js
+┃ ┗ index.ts
 ┣ Asserts/
-┃ ┣ bg.png
-┃ ┣ galaxy.jpg
-┃ ┣ iss.jpg
-┃ ┣ moon.jpg
-┃ ┗ space.jpg
+┃ ┗ bg.png
 ┣ Components/
 ┃ ┣ HistoryTable/
-┃ ┃ ┣ index.jsx
+┃ ┃ ┣ index.tsx
 ┃ ┃ ┗ style.module.scss
 ┃ ┣ LineChart/
 ┃ ┃ ┗ index.jsx
 ┃ ┣ Nav/
-┃ ┃ ┣ index.jsx
+┃ ┃ ┣ index.tsx
 ┃ ┃ ┗ style.module.scss
 ┃ ┗ StockCard/
-┃   ┣ index.jsx
+┃   ┣ index.tsx
 ┃   ┗ style.module.scss
 ┣ Containers/
-┃ ┣ index.jsx
+┃ ┣ index.tsx
 ┃ ┗ style.module.scss
 ┣ Pages/
 ┃ ┣ Detail/
-┃ ┃ ┣ index.jsx
+┃ ┃ ┣ __generated__/
+┃ ┃ ┃ ┣ booking.ts
+┃ ┃ ┃ ┣ getStocksBySymbol.ts
+┃ ┃ ┃ ┗ isStockBookedByUser.ts
+┃ ┃ ┣ index.tsx
 ┃ ┃ ┗ style.module.scss
 ┃ ┣ Home/
-┃ ┃ ┣ index.jsx
+┃ ┃ ┣ __generated__/
+┃ ┃ ┃ ┗ getStocksBySector.ts
+┃ ┃ ┣ index.tsx
 ┃ ┃ ┗ style.module.scss
 ┃ ┣ Login/
-┃ ┃ ┣ index.jsx
+┃ ┃ ┣ __generated__/
+┃ ┃ ┃ ┗ LOGIN.ts
+┃ ┃ ┣ index.tsx
 ┃ ┃ ┗ style.module.scss
 ┃ ┣ Result/
-┃ ┃ ┣ resultByKeyword.jsx
-┃ ┃ ┣ resultBySymbol.jsx
+┃ ┃ ┣ __generated__/
+┃ ┃ ┃ ┗ searchStockByName.ts
+┃ ┃ ┣ resultByKeyword.tsx
+┃ ┃ ┣ resultBySymbol.tsx
 ┃ ┃ ┗ style.module.scss
 ┃ ┣ Stocks/
-┃ ┃ ┣ index.jsx
+┃ ┃ ┣ __generated__/
+┃ ┃ ┃ ┗ getStocks.ts
+┃ ┃ ┣ index.tsx
 ┃ ┃ ┗ style.module.scss
 ┃ ┗ Subscribe/
-┃   ┣ index.jsx
+┃   ┣ __generated__/
+┃ ┃ ┃ ┣ cancelSubscribe.ts
+┃ ┃ ┃ ┗ getSubscribes.ts
+┃   ┣ index.tsx
 ┃   ┗ style.module.scss
 ┣ Route/
-┃ ┣ index.jsx
+┃ ┣ index.tsx
 ┃ ┗ style.module.scss
-┣ .env
-┣ apollo.config.js
-┣ cache.js
-┣ index.js
+┣ cache.ts
+┣ index.tsx
+┣ logo.svg
+┣ react-app-env.d.ts
 ┣ reportWebVitals.js
 ┣ setupTests.js
 ┗ style.scss

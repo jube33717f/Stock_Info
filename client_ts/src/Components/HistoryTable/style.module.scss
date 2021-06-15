@@ -1,0 +1,61 @@
+.table{
+    box-sizing: border-box;
+    padding-right: 24px;
+    margin-top:-10px;
+    width: 100%;
+    display: block;
+    &Box{
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: rgba(18 ,0 ,59,.12) 0px 2px 6px, rgba(18 ,0 ,59 ,.04) 0px -1px 5px;
+        border-radius: 16px;
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 24px;
+        &Header{
+            border-width: 0px 0px 1px;
+            border-image: initial;
+            border-style: solid;
+            border-color: rgb(227, 225, 232);
+            padding: 16px 32px;
+        }
+        &Content{
+            &Row{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                -webkit-box-align: center;
+                align-items: center;
+                -webkit-box-flex: 1;
+                flex-grow: 1;
+                p{
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 18px;
+                    text-align: left;
+                    width:18%;
+                    min-width: 86px;
+                    text-align: center;
+                }
+                padding-bottom:20px;
+               
+               
+                
+            }
+            &LineChart{
+                margin:20px;
+            }
+        }
+        
+    }
+}
+@media screen and (max-width: 780px){
+    .table{
+        padding-right:0;
+        &BoxContent{
+            overflow:scroll
+        }
+    }
+}

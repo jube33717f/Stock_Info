@@ -1,0 +1,46 @@
+
+:root{
+  //this file will contain all the font size and font family that will be used in the project
+  // font size list
+  --pg-size-md: 767px;
+
+  // other break point for this project
+  --pg-size-xl: 1024px;
+  --pg-size-lg: 991px;
+  --pg-size-xs: 575px;
+  //this file will contain all the font size and font family that will be used in the project
+  // font size list
+  --font-size-24: 2.4rem;
+  --font-size-20: 2rem;
+  --font-size-16: 1.6rem;
+  --font-size-14: 1.4rem;
+  --font-size-12: 1.2rem;
+  --font-size-10: 1rem;
+  --font-size-8: .8rem;
+  --font-size-6: .6rem;
+  // --body-bg-color: #24203F;
+
+  // font family list
+  --commonFamily: Roboto, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, 'PingFang SC',
+  'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif;
+  button{
+      cursor:pointer;
+  }
+  body{
+      background-color: var(--body-bg-color, #24203F);
+      transition: background-color .5s ease-in;
+      padding:0;
+      margin:0;
+      width:100vw;
+      overflow-x: hidden;
+  }
+  a{
+      text-decoration:none;
+  }
+  width:100vw;
+  overflow-x: hidden;
+  
+}
+.MuiPaginationItem-root {
+  color:white!important;
+}

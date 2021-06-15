@@ -1,0 +1,41 @@
+.wapper{
+    // text-align: center;
+    padding-top:96px;
+    color:white
+}
+
+.header{
+
+    p{
+        line-height: 64px;
+        font-size: 48px;
+        color:#ffffff;
+        text-align: center;
+    }
+}
+.cardContent{
+    color:black;
+    &Table{
+        box-sizing: border-box;
+        display: flex;
+        &Cell{
+            margin-right: 24px;
+            p{
+                margin: 0px;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 18px;
+                color: rgb(190, 190, 203);
+                padding-bottom: 0px;
+            }
+            span{
+                margin: 0px;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: 600;
+                color: rgb(0, 0,0);
+            }
+        }
+    }
+
+}

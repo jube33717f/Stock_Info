@@ -28,6 +28,11 @@ and
 cd client && npm i && npm start
 ```
 
+or 
+```bash
+cd client_ts && npm i && npm start
+```
+
 * example dataset in dir '/server/Data'
 * use email/password in '/server/Data/user.json' to log into and try the service
   
@@ -35,6 +40,7 @@ cd client && npm i && npm start
 # Tech/framework used
 Client Side:
 * React JS
+* Typescript
 * SASS
 * Material-UI
 
@@ -58,7 +64,8 @@ Server Side:
 
 # File structure
 The app is split out into two folders:
-- `client`: Starting point for the frontend
+- `client`: Starting point for the frontend(js version)
+- `client_ts`: Starting point for the frontend(ts version)
 - `server`: Starting point for the database
   
 client

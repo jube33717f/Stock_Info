@@ -22,7 +22,7 @@ To run the app, run these commands in two separate terminal windows from the roo
 cd server && npm i && npm start
 ```
 
-and
+and(
 
 ```bash
 cd client && npm i && npm start
@@ -32,6 +32,7 @@ or
 ```bash
 cd client_ts && npm i && npm start
 ```
+)
 
 * example dataset in dir '/server/Data'
 * use email/password in '/server/Data/user.json' to log into and try the service

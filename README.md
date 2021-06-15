@@ -70,8 +70,8 @@ The app is split out into two folders:
 - `server`: Starting point for the database
   
 client_ts
-src/
 ```
+src/
 ┣ Apis/
 ┃ ┗ index.ts
 ┣ Asserts/
@@ -140,8 +140,8 @@ src/
 
 
 server
-src/
 ```
+src/
 ┣ datasources/
 ┃ ┣ stock.js
 ┃ ┗ user.js

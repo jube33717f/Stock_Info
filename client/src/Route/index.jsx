@@ -16,7 +16,7 @@
  const SearchBySymbol = React.lazy(()=>import('../Pages/Result/resultBySymbol'))
  const SearchByKeyword = React.lazy(()=>import('../Pages/Result/resultByKeyword'))
  const Stocks = React.lazy(()=>import('../Pages/Stocks'))
- const RootRouter = () =>(
+ const RootRouter = (): JSX.Element  =>(
     <Suspense
         fallback={
         /* <------------------------------------ **** Loading Animation START **** ------------------------------------ */

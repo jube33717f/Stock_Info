@@ -1,7 +1,7 @@
 
-import { InMemoryCache, Reference, makeVar } from '@apollo/client';
+import { InMemoryCache, makeVar } from '@apollo/client';
 
-export const cache = new InMemoryCache({
+export const cache: InMemoryCache = new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
@@ -18,4 +18,4 @@ export const cache = new InMemoryCache({
 });
 
 export const isLoggedInVar =
-  makeVar(!!localStorage.getItem('token'));
+  makeVar<boolean>(!!localStorage.getItem('token'));

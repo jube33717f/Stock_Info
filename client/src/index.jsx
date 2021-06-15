@@ -11,7 +11,7 @@ import {
 import { cache } from './cache';
 const client = new ApolloClient({
   cache,
-  uri: 'http://localhost:4000',
+  uri: 'https://stock-info-apollo.herokuapp.com/',
   headers: {
     'client-name': 'Stock Info',
     'client-version': '1.0.0',

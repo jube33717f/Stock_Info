@@ -20,6 +20,9 @@ import StockCard from '../../Components/StockCard'
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+import { makeStyles } from '@material-ui/core/styles';
 /* <------------------------------------ **** GRAPH QUERY START **** ------------------------------------ */
 const LOGIN_USER = gql`
     mutation LOGIN(
@@ -47,7 +50,11 @@ const ColorButton = withStyles((theme) => ({
     },
   }))(Button);
 /* <------------------------------------ **** STYLE COMPONENT START **** ------------------------------------ */
-
+/* <------------------------------------ **** FUNCTION COMPONENT START **** ------------------------------------ */
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+/* <------------------------------------ **** FUNCTION COMPONENT START **** ------------------------------------ */
 const Login = ()=>{
     /* <------------------------------------ **** HOOKS START **** ------------------------------------ */
     const [values, setValues] = useState({
@@ -57,6 +64,8 @@ const Login = ()=>{
     });
     const history=useHistory()
     const [addTodo, { data }] = useMutation(LOGIN_USER);
+    const [open, setOpen] = useState(false);
+    const [success , setSuccess] = useState(false)
     /* <------------------------------------ **** HOOKS END **** ------------------------------------ */
     /* <------------------------------------ **** FUNCTION START **** ------------------------------------ */
     const handleChange = (prop) => (event) => {
@@ -68,6 +77,16 @@ const Login = ()=>{
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+    // const handleClick = () => {
+    //     setOpen(true);
+    // };
+    
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
     /* <------------------------------------ **** FUNCTION END **** ------------------------------------ */
     return (<Container>
         <div className={style.login}>
@@ -76,10 +95,15 @@ const Login = ()=>{
             <h1>Welcome back</h1>
         <form className={style.loginForm} onSubmit={async()=>{
             addTodo({ variables: { email:values.email,password:values.password } })
-            if(data){
+            if(data.login && data.login.id){
+                setOpen(true)
+                setSuccess(true)
                 sessionStorage.setItem('userid', data.login.id);
                 sessionStorage.setItem('name', data.login.firstName);
                 history.replace('/')
+            }else{
+                setOpen(true)
+                setSuccess(false)
             }
             
         }}>
@@ -133,7 +157,13 @@ const Login = ()=>{
             </form>
             </StockCard>
         </div>
-
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            {success?<Alert onClose={handleClose} severity="success">
+                Login successfully!
+            </Alert>:<Alert onClose={handleClose} severity="error">
+                Please check your password or account!
+            </Alert>}
+        </Snackbar>
     </Container>
     );
     
